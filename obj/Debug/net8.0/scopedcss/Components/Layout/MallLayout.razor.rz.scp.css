@@ -1,0 +1,57 @@
+body[b-6ol49j3df6] {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff0f5;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+
+/* ����� ����� */
+.navbar[b-6ol49j3df6] {
+    font-size: 1.1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar-brand[b-6ol49j3df6] {
+    font-size: 1.5rem;
+    color: #e75480 !important;
+}
+
+.nav-link[b-6ol49j3df6] {
+    color: #555 !important;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+    .nav-link:hover[b-6ol49j3df6] {
+        color: #e75480 !important;
+    }
+
+/* ������� */
+button.btn[b-6ol49j3df6] {
+    border-radius: 1.5rem;
+    padding: 10px 20px;
+}
+
+/* ������� */
+.card[b-6ol49j3df6] {
+    border: none;
+    transition: transform 0.2s ease;
+}
+
+    .card:hover[b-6ol49j3df6] {
+        transform: scale(1.02);
+    }
+
+.card-title[b-6ol49j3df6] {
+    font-weight: bold;
+}
+
+/* ���� ������� */
+h2[b-6ol49j3df6], h3[b-6ol49j3df6] {
+    font-weight: 700;
+}
+
+.text-primary[b-6ol49j3df6] {
+    color: #e75480 !important;
+}

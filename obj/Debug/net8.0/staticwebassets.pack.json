@@ -1,0 +1,77 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\User\\Desktop\\MyProject--master\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MyProject.bundle.scp.css",
+      "PackagePath": "staticwebassets\\MyProject.c8v7f5b9px.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\MyProject--master\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\MyProject--master\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\MyProject--master\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\MyProject--master\\wwwroot\\images\\clothes.jpg",
+      "PackagePath": "staticwebassets\\images\\clothes.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\MyProject--master\\wwwroot\\images\\electronics.jpg",
+      "PackagePath": "staticwebassets\\images\\electronics.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\MyProject--master\\wwwroot\\images\\fashion.jpg",
+      "PackagePath": "staticwebassets\\images\\fashion.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\MyProject--master\\wwwroot\\images\\favicon.png",
+      "PackagePath": "staticwebassets\\images\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\MyProject--master\\wwwroot\\images\\interior.jpg",
+      "PackagePath": "staticwebassets\\images\\interior.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\MyProject--master\\wwwroot\\images\\mall.jpg",
+      "PackagePath": "staticwebassets\\images\\mall.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\MyProject--master\\wwwroot\\images\\shoes.jpg",
+      "PackagePath": "staticwebassets\\images\\shoes.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\MyProject--master\\wwwroot\\images\\shopping.jpg",
+      "PackagePath": "staticwebassets\\images\\shopping.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\MyProject--master\\wwwroot\\images\\store.jpg",
+      "PackagePath": "staticwebassets\\images\\store.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MyProject.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MyProject.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.MyProject.props",
+      "PackagePath": "build\\MyProject.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.MyProject.props",
+      "PackagePath": "buildMultiTargeting\\MyProject.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.MyProject.props",
+      "PackagePath": "buildTransitive\\MyProject.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

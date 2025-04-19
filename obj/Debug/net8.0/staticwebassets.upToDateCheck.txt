@@ -1,0 +1,12 @@
+wwwroot\app.css
+wwwroot\bootstrap\bootstrap.min.css
+wwwroot\bootstrap\bootstrap.min.css.map
+wwwroot\images\clothes.jpg
+wwwroot\images\electronics.jpg
+wwwroot\images\fashion.jpg
+wwwroot\images\favicon.png
+wwwroot\images\interior.jpg
+wwwroot\images\mall.jpg
+wwwroot\images\shoes.jpg
+wwwroot\images\shopping.jpg
+wwwroot\images\store.jpg
