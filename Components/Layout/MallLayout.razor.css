@@ -1,0 +1,57 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff0f5;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+
+/* ניווט עליון */
+.navbar {
+    font-size: 1.1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #e75480 !important;
+}
+
+.nav-link {
+    color: #555 !important;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+    .nav-link:hover {
+        color: #e75480 !important;
+    }
+
+/* כפתורים */
+button.btn {
+    border-radius: 1.5rem;
+    padding: 10px 20px;
+}
+
+/* כרטיסים */
+.card {
+    border: none;
+    transition: transform 0.2s ease;
+}
+
+    .card:hover {
+        transform: scale(1.02);
+    }
+
+.card-title {
+    font-weight: bold;
+}
+
+/* טקסט וכותרות */
+h2, h3 {
+    font-weight: 700;
+}
+
+.text-primary {
+    color: #e75480 !important;
+}

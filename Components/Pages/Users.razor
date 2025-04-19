@@ -1,0 +1,87 @@
+﻿@page "/users"
+@inject MyProject.Data.MyDBService DbService
+@using MyProject.Models
+
+<div class="container-users" dir="rtl">
+    <h3 class="text-center">רשימת משתמשים</h3>
+
+    @if (users == null)
+    {
+        <p class="text-center">טוען נתונים...</p>
+    }
+    else if (users.Count == 0)
+    {
+        <p class="text-center">אין משתמשים במערכת.</p>
+    }
+    else
+    {
+        <div class="table-container">
+            <table class="table-users">
+                <thead>
+                    <tr>
+                        <th>מזהה</th>
+                        <th>שם מלא</th>
+                        <th>אימייל</th>
+                        <th>סיסמה</th>
+                        <th>תפקיד</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var user in users)
+                    {
+                        <tr>
+                            <td>@user.GetId()</td>
+                            <td>@user.GetFullName()</td>
+                            <td>@user.GetEmail()</td>
+                            <td>@user.GetPassword()</td>
+                            <td>@user.GetRole()</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
+
+<style>
+    .container-users {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        font-family: Arial, sans-serif;
+    }
+
+    .table-container {
+        overflow-x: auto;
+        width: 100%;
+        max-width: 800px;
+    }
+
+    .table-users {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: right;
+        direction: rtl;
+    }
+
+        .table-users th,
+        .table-users td {
+            border: 1px solid #999;
+            padding: 10px;
+        }
+
+    .text-center {
+        text-align: center;
+    }
+</style>
+
+@code {
+    private List<MyProject.Models.User> users;
+
+    protected override void OnInitialized()
+    {
+        users = DbService.GetAllUsers();
+    }
+}

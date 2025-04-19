@@ -1,0 +1,38 @@
+﻿@inherits LayoutComponentBase
+
+<div>
+    <!-- ניווט עליון -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm px-4">
+        <a class="navbar-brand fw-bold text-danger" href="/">בית</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="/gallery">גלרייה</NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="/game">משחק</NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="/stores">חנויות</NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="/deals">מבצעים</NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="/register">הרשמה</NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="/login">התחברות</NavLink>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- תוכן הדף -->
+    <div class="container mt-4">
+        @Body
+    </div>
+</div>

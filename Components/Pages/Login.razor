@@ -1,0 +1,95 @@
+﻿@layout Components.Layout.MallLayout
+@page "/login"
+@rendermode InteractiveServer
+
+@using System.ComponentModel.DataAnnotations
+@inject MyProject.Data.MyDBService DbService
+@inject NavigationManager Nav
+
+<div class="d-flex justify-content-center align-items-center min-vh-100" style="background-color: #fff0f5;">
+    <div class="d-flex shadow rounded-4 overflow-hidden" style="width: 900px;">
+        <!-- Left Side -->
+        <div class="d-flex flex-column justify-content-center align-items-center p-5" style="width: 40%; background-color: #f8c6d8; color: black;">
+            <h1 class="mb-4">התחברות</h1>
+            <p>הזן את הפרטים שלך כדי להיכנס</p>
+        </div>
+
+        <!-- Right Side -->
+        <div class="d-flex flex-column justify-content-center align-items-center p-5" style="width: 60%; background-color: white;" dir="rtl">
+            <div style="max-width: 400px; width: 100%; text-align: right;">
+                <h3 class="text-center text-secondary" style="text-align: center;">התחברות לחשבון</h3>
+
+                <EditForm Model="@loginModel" OnValidSubmit="@LoginUser">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+
+                    <div class="mb-3">
+                        <label class="form-label">אימייל</label>
+                        <InputText @bind-Value="loginModel.Email" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">סיסמה</label>
+                        <InputText @bind-Value="loginModel.Password" type="password" class="form-control" />
+                    </div>
+
+                    <button type="submit" class="btn w-100 text-white" style="background-color: #e75480;">התחברות</button>
+                </EditForm>
+
+                @if (!string.IsNullOrEmpty(SuccessMessage))
+                {
+                    <div class="alert alert-success mt-3">@SuccessMessage</div>
+                }
+                @if (!string.IsNullOrEmpty(ErrorMessage))
+                {
+                    <div class="alert alert-danger mt-3">@ErrorMessage</div>
+                }
+
+                <div class="text-center mt-3">
+                    <a href="/register" class="btn btn-link text-decoration-none" style="color: #e75480;">אין לך חשבון? הירשם</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    public class LoginModel
+    {
+        [Required(ErrorMessage = "הזן אימייל")]
+        [EmailAddress(ErrorMessage = "אימייל לא חוקי")]
+        public string Email { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "הזן סיסמה")]
+        public string Password { get; set; } = string.Empty;
+    }
+
+    private LoginModel loginModel = new();
+    private string SuccessMessage = string.Empty;
+    private string ErrorMessage = string.Empty;
+
+    private void LoginUser()
+    {
+        SuccessMessage = string.Empty;
+        ErrorMessage = string.Empty;
+
+        try
+        {
+            var user = DbService.AuthenticateUser(loginModel.Email, loginModel.Password);
+            if (user != null)
+            {
+                SuccessMessage = "התחברת בהצלחה!";
+                Nav.NavigateTo("/");
+            }
+            else
+            {
+                ErrorMessage = "אימייל או סיסמה שגויים.";
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Login error: {ex.Message}");
+            ErrorMessage = "אירעה שגיאה בעת ההתחברות.";
+        }
+    }
+}

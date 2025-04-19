@@ -1,0 +1,44 @@
+﻿@layout Components.Layout.MallLayout
+@page "/gallery"
+@rendermode InteractiveServer
+
+<h2 class="text-center mt-4 mb-5">📸 גלריית הקניון</h2>
+
+<div class="container">
+    <div class="row g-4">
+        @foreach (var imageUrl in GalleryImages)
+        {
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card shadow-sm image-hover-card">
+                    <img src="@imageUrl" class="card-img-top rounded image-hover" alt="תמונה מהקניון">
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .image-hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    }
+
+    .image-hover-card:hover .image-hover {
+        transform: scale(1.05);
+        filter: brightness(1.1);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+</style>
+
+@code {
+    private List<string> GalleryImages = new()
+    {
+        "images/mall.jpg",
+        "images/shopping.jpg",
+        "images/store.jpg",
+        "images/fashion.jpg",
+        "images/clothes.jpg",
+        "images/electronics.jpg",
+        "images/interior.jpg",
+        "images/shoes.jpg"
+    };
+}

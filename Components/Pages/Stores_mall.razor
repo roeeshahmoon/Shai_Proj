@@ -1,0 +1,57 @@
+﻿@layout Components.Layout.MallLayout
+@page "/stores"
+@rendermode InteractiveServer
+
+<div class="container py-5" dir="rtl">
+    <h2 class="text-center mb-5 fw-bold text-pink display-5">חנויות הקניון 🛍️</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @foreach (var store in Stores)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-lg border-0 rounded-4 store-card">
+                    <div class="card-body text-center p-4">
+                        <h5 class="card-title fw-bold text-dark mb-3">🏬 @store.Name</h5>
+                        <p class="card-text text-secondary mb-4">@store.Description</p>
+                        <a href="@store.Url" target="_blank" class="btn btn-sm px-4 py-2 rounded-pill text-white shadow" style="background-color: #e75480;">
+                            בקרו באתר
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .store-card:hover {
+        transform: scale(1.03);
+        transition: transform 0.3s ease;
+    }
+
+    .text-pink {
+        color: #e75480;
+    }
+
+    .text-pink-dark {
+        color: #c2185b;
+    }
+</style>
+
+@code {
+    public class Store
+    {
+        public string Name { get; set; } = "";
+        public string Description { get; set; } = "";
+        public string Url { get; set; } = "";
+    }
+
+    private List<Store> Stores = new()
+    {
+        new Store { Name = "קסטרו", Description = "אופנה לנשים ולגברים", Url = "https://www.castro.com/" },
+        new Store { Name = "אייס", Description = "ציוד לבית, גינה וכלי עבודה", Url = "https://www.ace.co.il/" },
+        new Store { Name = "טויס אר אס", Description = "צעצועים, משחקים ומתנות לילדים", Url = "https://www.toysrus.co.il/" },
+        new Store { Name = "סופר-פארם", Description = "בריאות, טיפוח ותרופות", Url = "https://shop.super-pharm.co.il/" },
+        new Store { Name = "אופטיקנה", Description = "משקפיים, עדשות ושירותי ראייה", Url = "https://www.opticana.co.il/" },
+        new Store { Name = "פוקס", Description = "אופנה לכל המשפחה", Url = "https://www.terminalx.com/brands/fox-main" }
+    };
+}

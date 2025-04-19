@@ -1,0 +1,42 @@
+﻿@page "/"
+@rendermode InteractiveServer
+@layout Components.Layout.EmptyLayout
+
+@inject NavigationManager Nav
+
+<div class="d-flex justify-content-center align-items-center min-vh-100" style="background: linear-gradient(to right, #fff0f5, #f8c6d8);">
+    <div class="d-flex shadow-lg rounded-4 overflow-hidden" style="width: 900px;">
+        <!-- Left Side -->
+        <div class="d-flex flex-column justify-content-center align-items-center p-5" style="width: 40%; background-color: #ffebf0; color: #333;">
+            <h1 class="mb-4">!ברוכים הבאים</h1>
+            <p> ✨ גלו את כל מה שיש לקניון שלנו להציע</p>
+        </div>
+
+        <!-- Right Side -->
+        <div class="d-flex flex-column justify-content-center align-items-center p-5" style="width: 60%; background-color: #ffffff;" dir="rtl">
+            <div style="max-width: 400px; width: 100%; text-align: right;">
+                <h3 class="text-center text-secondary" style="text-align: center;">אתר הקניון 🏬</h3>
+                <p class="mb-4 fs-6 text-muted" style="line-height: 1.6;">
+                  התחברו או הירשמו כדי להתחיל לגלוש בין מגוון החנויות, המבצעים השווים, גלריית התמונות שלנו ואפילו ליהנות ממשחק שיעביר לכם את הזמן.  
+                </p>
+                <div class="d-grid gap-3">
+                    <button class="btn text-white" style="background-color: #e75480;" @onclick="NavigateToStores">חנויות 🛍️</button>
+                    <button class="btn btn-outline-secondary" @onclick="NavigateToDeals">מבצעים 🔥</button>
+                    <button class="btn text-white" style="background-color: #e75480;" @onclick="NavigateToLogin">התחבר 🔐</button>
+                    <button class="btn btn-outline-secondary" @onclick="NavigateToRegister">הירשם 📝</button>
+                    <button class="btn text-white" style="background-color: #e75480;" @onclick="NavigateToGame">משחק 🎮</button>
+                    <button class="btn btn-outline-secondary" @onclick="NavigateToGallery">גלריה 📸</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private void NavigateToStores() => Nav.NavigateTo("/stores");
+    private void NavigateToDeals() => Nav.NavigateTo("/deals");
+    private void NavigateToGame() => Nav.NavigateTo("/game");
+    private void NavigateToRegister() => Nav.NavigateTo("/register");
+    private void NavigateToLogin() => Nav.NavigateTo("/login");
+    private void NavigateToGallery() => Nav.NavigateTo("/gallery");
+}

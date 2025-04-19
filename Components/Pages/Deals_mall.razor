@@ -1,0 +1,67 @@
+﻿@layout Components.Layout.MallLayout
+@page "/deals"
+@rendermode InteractiveServer
+
+<div class="container py-5" dir="rtl">
+    <h2 class="text-center mb-5 fw-bold text-pink display-5">🎀 מבצעים חמים בקניון! 🎀</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @foreach (var deal in Deals)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-lg border-0 rounded-4 deal-card">
+                    <div class="card-body text-center p-4">
+                        <h5 class="card-title fw-bold text-pink-dark mb-3">💗 @deal.Title</h5>
+                        <p class="card-text text-muted mb-3">@deal.Description</p>
+                        <span class="badge fs-6 px-3 py-2 rounded-pill shadow deal-badge">
+                            🎁 @deal.Discount% הנחה
+                        </span>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .deal-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
+    }
+
+        .deal-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0.75rem 1.5rem rgba(255, 105, 180, 0.3);
+        }
+
+    .text-pink {
+        color: #e75480;
+    }
+
+    .text-pink-dark {
+        color: #c2185b;
+    }
+
+    .deal-badge {
+        background: linear-gradient(to right, #ffb6c1, #ff69b4);
+        color: white;
+    }
+</style>
+
+@code {
+    public class Deal
+    {
+        public string Title { get; set; } = "";
+        public string Description { get; set; } = "";
+        public int Discount { get; set; }
+    }
+
+    private List<Deal> Deals = new()
+    {
+        new Deal { Title = "נעלי ספורט במבצע", Description = "זוג שני ב-50%! 🏃‍♂️", Discount = 50 },
+        new Deal { Title = "קוסמטיקה 1+1", Description = "מותגים נבחרים ב-SuperPharm 💄", Discount = 100 },
+        new Deal { Title = "צעצועים לילדים", Description = "20% הנחה על כל הצעצועים 🧸", Discount = 20 },
+        new Deal { Title = "אופנת חורף", Description = "עד 40% הנחה על קולקציית החורף ❄️🧥", Discount = 40 },
+        new Deal { Title = "אביזרי אלקטרוניקה", Description = "מבצעי חיסול על אוזניות, רמקולים ועוד 🔊", Discount = 30 },
+        new Deal { Title = "מתנות לחג", Description = "30% הנחה על כל המתנות 🎁", Discount = 30 }
+    };
+}
